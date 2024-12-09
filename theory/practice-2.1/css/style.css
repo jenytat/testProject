@@ -1,0 +1,402 @@
+body {
+    margin: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    color: rgb(12, 16, 20);
+}
+
+a {
+    font-family: "Lato", sans-serif;
+}
+
+button {
+    font-family: "Lato", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: rgb(12, 16, 20);
+}
+.btn {
+    padding-top: 76px;
+    padding-left: 76px;
+}
+.btn__item {
+    outline: none;
+    background: none;
+    min-width: 147px;
+    padding: 14px 10px 16px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid rgb(229, 38, 110);
+    font-weight: 600;
+    color: rgb(229, 38, 110);
+    border-radius: 4px;
+    transition: all .3s ease;
+}
+
+.btn__item:hover {
+    background: rgb(229, 38, 110);
+    color: #fff;
+    cursor: pointer;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+.modal__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.modal__block {
+    max-width: 754px;
+    width: 100%;
+    border-radius: 12px;
+    background: #fff;
+    padding: 53px 49px 53px 98px;
+}
+.modal__scroll {
+    overflow: auto;
+    max-height: calc(100vh - 200px);
+    padding-right: 49px;
+}
+.modal__scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.modal__scroll::-webkit-scrollbar-track {
+    background: rgba(214, 218, 222, 0.5);
+}
+.modal__scroll::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(229, 38, 110, 0.8);
+}
+.modal__block h2 {
+    margin: 0 0 35px;
+    font-size: 28px;
+    line-height: 34px;
+}
+.modal__block form {
+    display: grid;
+    grid-template-columns: 1fr 175px;
+    grid-column-gap: 32px;
+    grid-template-areas:
+    "name imageBlock"
+    "phone imageBlock"
+    "email imageBlock"
+    "direction direction"
+    "site site"
+    "vk vk"
+    "ok ok"
+    "facebook facebook"
+    "instagram instagram"
+    "youtube youtube"
+    "seo seo"
+    "buttonBlock buttonBlock"
+    "clouse clouse";
+}
+.modal__item--name {
+    grid-area: name;
+}
+.modal__item--phone {
+    grid-area: phone;
+}
+.modal__item--email {
+    grid-area: email;
+}
+.modal__item--image {
+    grid-area: imageBlock;
+}
+.modal__item--direction {
+    grid-area: direction;
+}
+.modal__item--site {
+    grid-area: site;
+}
+.modal__item--vk {
+    grid-area: vk;
+}
+.modal__item--ok {
+    grid-area: ok;
+}
+.modal__item--facebook {
+    grid-area: facebook;
+}
+.modal__item--instagram {
+    grid-area: instagram;
+}
+.modal__item--youtube {
+    grid-area: youtube;
+}
+.modal__item--seo {
+    grid-area: seo;
+}
+.modal__item {
+    position: relative;
+}
+.modal__item:not(:last-child) {
+    margin-bottom: 32px;
+}
+.modal__item input[type="text"],
+.modal__item input[type="phone"],
+.modal__item input[type="email"] {
+    width: 100%;
+    padding: 22px 16px 7px;
+    border: 1px solid rgb(214, 218, 222);
+    border-radius: 2px;
+    box-sizing: border-box;
+    outline: none;
+    color: rgb(12, 16, 20);
+    font-size: 16px;
+    line-height: 24px;
+    transition: all .3s ease;
+}
+.modal__item select {
+    width: 100%;
+    padding: 22px 16px 7px;
+    border: 1px solid rgb(214, 218, 222);
+    border-radius: 2px;
+    box-sizing: border-box;
+    outline: none;
+    color: rgb(12, 16, 20);
+    font-size: 16px;
+    line-height: 24px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: all .3s ease;
+}
+.modal__item select:focus {
+    border-color: rgba(229, 38, 110, 0.23);
+}
+.modal__item--direction::after {
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 7px;
+    top: 24px;
+    right: 14px;
+    background: url("data:image/svg+xml;charset=UTF-8,<svg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M5.625 4.74112L1.06694 0.183058C0.822865 -0.0610194 0.427135 -0.0610194 0.183058 0.183058C-0.0610199 0.427136 -0.0610199 0.822864 0.183058 1.06694L5.625 6.50888L11.0669 1.06694C11.311 0.822864 11.311 0.427136 11.0669 0.183058C10.8229 -0.0610194 10.4271 -0.0610194 10.1831 0.183058L5.625 4.74112Z' fill='%236A6E72'/></svg>") no-repeat 50% 50% / contain;
+}
+.modal__item input[type="text"]::placeholder,
+.modal__item input[type="phone"]::placeholder,
+.modal__item input[type="email"]::placeholder {
+    color: rgba(214, 218, 222, 0.8);
+}
+.modal__item input[type="text"]:focus {
+    border-color: rgba(229, 38, 110, 0.23);
+}
+.modal__item input[type="file"] {
+    display: none;
+}
+.modal__item--push {
+    position: relative;
+    margin-top: 13px;
+}
+.modal__item--label {
+    width: 163px;
+    height: 163px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal__item--new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 163px;
+    height: 163px;
+    border-radius: 50%;
+}
+.modal__item--new img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.modal__item .modal__item--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 25px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+.modal__item--placeholder::before {
+    display: none;
+}
+.modal__item--placeholder svg {
+    margin-bottom: 7px;
+}
+.modal__item--placeholder span {
+    text-decoration: underline;
+    color: #fff;
+    font-size: 19px;
+    line-height: 28px;
+    text-align: center;
+}
+.modal__item--image svg {
+    z-index: 5;
+    position: relative;
+}
+.modal__item label {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(106, 110, 114);
+}
+.remove-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 9px;
+    right: 2px;
+    z-index: 10;
+    border: none;
+    outline: none;
+}
+.modal__item label::before {
+    content: '✱ ';
+    font-size: 12px;
+    line-height: 16px;
+    left: 16px;
+    top: 8px;
+    color: rgb(217, 0, 0);
+}
+.modal__item--image label {
+    position: relative;
+    top: 0;
+}
+.modal__item--media svg {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.modal__item--media input[type="text"] {
+    padding: 16px 35px 16px 16px;
+}
+.modal__item--seo label::before {
+    display: none;
+}
+.modal__btn {
+    margin-top: 18px;
+    margin-bottom: 15px;
+    grid-area: buttonBlock;
+}
+.modal__btn button {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px 16px;
+    background: rgb(229, 38, 110);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    color: #fff;
+    box-sizing: border-box;
+    border: 1px solid rgb(229, 38, 110);
+    transition: all .3s ease;
+}
+.modal__btn button:hover {
+    background: transparent;
+    color: rgb(229, 38, 110);
+}
+.modal__clouse {
+    display: flex;
+    justify-content: center;
+    grid-area: clouse;
+}
+.modal__clouse span {
+    color: rgb(8, 72, 192);
+    transition: all .3s ease;
+}
+.modal__clouse span:hover {
+    color: rgb(229, 38, 110);
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .modal__block {
+        max-width: calc(100vw - 250px);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal__block {
+        max-width: calc(100vw - 70px);
+        padding: 45px 15px 45px 25px;
+    }
+    .modal__scroll {
+        padding-right: 10px;
+    }
+    .modal__block h2 {
+        font-size: 20px;
+        line-height: 30px;
+        margin: 0 0 20px;
+    }
+    .modal__block form {
+        grid-template-columns: 100%;
+        grid-template-areas:
+        "imageBlock"
+        "name"
+        "phone"
+        "email"
+        "direction"
+        "site"
+        "vk"
+        "ok"
+        "facebook"
+        "instagram"
+        "youtube"
+        "seo"
+        "buttonBlock"
+        "clouse";
+    }
+    .modal__item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    .modal__item--label,
+    .modal__item--new {
+        width: 130px;
+        height: 130px;
+    }
+    .modal__item--placeholder span {
+        font-size: 16px;
+        line-height: 25px;
+    }
+}
+
